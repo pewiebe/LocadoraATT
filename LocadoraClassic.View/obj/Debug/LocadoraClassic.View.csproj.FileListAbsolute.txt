@@ -92,3 +92,6 @@ C:\Users\ALUNO\Desktop\locadoraclassic-master\LocadoraClassic.View\obj\Debug\Loc
 C:\Users\ALUNO\Desktop\locadoraclassic-master\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.csproj.CopyComplete
 C:\Users\ALUNO\Desktop\locadoraclassic-master\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.exe
 C:\Users\ALUNO\Desktop\locadoraclassic-master\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.pdb
+C:\Users\ALUNO\Desktop\locadoraclassic-master\LocadoraClassic.View\bin\Debug\aa-DJ\LocadoraClassic.View.resources.dll
+C:\Users\ALUNO\Desktop\locadoraclassic-master\LocadoraClassic.View\obj\Debug\LocadoraClassic.View.FrmCliente.aa-DJ.resources
+C:\Users\ALUNO\Desktop\locadoraclassic-master\LocadoraClassic.View\obj\Debug\aa-DJ\LocadoraClassic.View.resources.dll

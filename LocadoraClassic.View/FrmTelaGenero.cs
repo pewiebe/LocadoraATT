@@ -14,6 +14,7 @@ namespace LocadoraClassic.View
 {
     public partial class FrmTelaGenero : Form
     {
+        GeneroDAL GeneroDAL = new GeneroDAL();
         public FrmTelaGenero()
         {
             InitializeComponent();
@@ -40,6 +41,23 @@ namespace LocadoraClassic.View
             txtGenero.Text = "";
             MessageBox.Show("Dados inseridos com sucesso!");
 
+
+        }
+
+        private void textGenero_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            
+        }
+
+        private void FrmTelaGenero_Load(object sender, EventArgs e)
+        {
+            CarregarGrid();
+        }
+
+        public void CarregarGrid()
+        {
+            textGenero.DataSource = GeneroDAL.ObterGeneros().ToList();
         }
     }
 }
