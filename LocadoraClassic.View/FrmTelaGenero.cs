@@ -39,6 +39,7 @@ namespace LocadoraClassic.View
 
             //Limpar a caixa
             txtGenero.Text = "";
+            CarregarGrid();
             MessageBox.Show("Dados inseridos com sucesso!");
 
 
@@ -46,8 +47,8 @@ namespace LocadoraClassic.View
 
         private void textGenero_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
-            
+            textGenero.DataSource = GeneroDAL.ObterGeneros().ToList();
+
         }
 
         private void FrmTelaGenero_Load(object sender, EventArgs e)
@@ -58,6 +59,56 @@ namespace LocadoraClassic.View
         public void CarregarGrid()
         {
             textGenero.DataSource = GeneroDAL.ObterGeneros().ToList();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            //ETAPA 1 - SELECIONAR O ID DA TABELA
+            int id = 0;
+            // Verifica se há alguma linha selecionada no DataGridView
+            if (textGenero.SelectedRows.Count > 0)
+            {
+                // Obtém a linha selecionada
+                DataGridViewRow selectedRow = textGenero.SelectedRows[0];
+
+                // Obtém o valor do campo "id" da célula selecionada
+                id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                // Faça o que precisar com o valor do campo "id"
+                // Por exemplo, exiba-o em uma caixa de diálogo
+                MessageBox.Show("O valor do campo 'id' é: " + id.ToString());
+            }
+
+            //ETAPA 2 - ENVIAR O ID PARA DELETE
+
+            GeneroDAL generoDAL = new GeneroDAL();
+            generoDAL.AtualizarGenero(id);
+            CarregarGrid();
+        }
+
+        private void txtAlterar_Click(object sender, EventArgs e)
+        {
+            //ETAPA 1 - SELECIONAR O ID DA TABELA
+            int id = 0;
+            // Verifica se há alguma linha selecionada no DataGridView
+           /* if (textGenero.SelectedRows.Count > 0)
+            {
+                // Obtém a linha selecionada
+                DataGridViewRow selectedRow = textGenero.SelectedRows[0];
+
+                // Obtém o valor do campo "id" da célula selecionada
+                id = Convert.ToInt32(selectedRow.Cells["Id"].Value);
+
+                // Faça o que precisar com o valor do campo "id"
+                // Por exemplo, exiba-o em uma caixa de diálogo
+                MessageBox.Show("O valor do campo 'id' é: " + id.ToString());
+            }
+
+            //ETAPA 2 - ENVIAR O ID PARA DELETE
+
+            GeneroDAL generoDAL = new GeneroDAL();
+            generoDAL.AtualizarGenero(id);
+            CarregarGrid();*/
         }
     }
 }

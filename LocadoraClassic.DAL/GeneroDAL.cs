@@ -49,6 +49,21 @@ namespace LocadoraClassic.DAL
             Conexao.Instance.Close();
             return generos;
         }
+        public void AtualizarGenero(int id)
+        {
+            // Abrir a Conexão
+            Conexao.Instance.Open();
+
+            // MySqlCommand
+            MySqlCommand comando = Conexao.Instance.CreateCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "DELETE FROM genero WHERE id = @id";
+            comando.Parameters.AddWithValue("@id", id);
+            comando.ExecuteNonQuery();
+
+            // Fechar a conexão
+            Conexao.Instance.Close();
+        }
     }
 }
 
