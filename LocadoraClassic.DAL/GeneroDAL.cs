@@ -8,6 +8,25 @@ namespace LocadoraClassic.DAL
 
     public class GeneroDAL
     {
+        public string Nome { get; set; }
+
+        public void AtualizarGenero(Genero genero)
+        {
+            // Abrir a Conexão
+            Conexao.Instance.Open();
+
+            // MySqlCommand
+            MySqlCommand comando = Conexao.Instance.CreateCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "UPDATE genero SET nome = @nome WHERE id = @id";
+            comando.Parameters.AddWithValue("@nome", genero.Nome);
+            comando.Parameters.AddWithValue("@id", genero.Id);
+            comando.ExecuteNonQuery();
+
+            // Fechar a conexão
+            Conexao.Instance.Close();
+        }
+
         public void InserirGenero(Genero genero)
         {
             //Abrir a Conexão
@@ -23,6 +42,8 @@ namespace LocadoraClassic.DAL
             comando.CommandText = "INSERT INTO genero(nome)values(@nome)";
             comando.Parameters.Add(new MySqlParameter("@nome", genero.Nome));
             comando.ExecuteNonQuery();
+
+            //Fechou conexão
             Conexao.Instance.Close();
         }
 
@@ -49,7 +70,8 @@ namespace LocadoraClassic.DAL
             Conexao.Instance.Close();
             return generos;
         }
-        public void AtualizarGenero(int id)
+        
+        public void ExcluirGenero(int id)
         {
             // Abrir a Conexão
             Conexao.Instance.Open();

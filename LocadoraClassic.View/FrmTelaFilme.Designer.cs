@@ -34,16 +34,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.BoxCategoria = new System.Windows.Forms.ComboBox();
+            this.BoxGenero = new System.Windows.Forms.ComboBox();
+            this.TxtFilme1 = new System.Windows.Forms.TextBox();
+            this.TxtSinopse = new System.Windows.Forms.TextBox();
+            this.BoxLocado = new System.Windows.Forms.CheckBox();
+            this.TxtDuracao = new System.Windows.Forms.MaskedTextBox();
+            this.BoxBanner = new System.Windows.Forms.PictureBox();
+            this.BtnCadastrarFilme = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BoxBanner)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,72 +100,72 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Banner";
             // 
-            // comboBox1
+            // BoxCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(62, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(356, 21);
-            this.comboBox1.TabIndex = 7;
+            this.BoxCategoria.FormattingEnabled = true;
+            this.BoxCategoria.Location = new System.Drawing.Point(62, 71);
+            this.BoxCategoria.Name = "BoxCategoria";
+            this.BoxCategoria.Size = new System.Drawing.Size(356, 21);
+            this.BoxCategoria.TabIndex = 7;
             // 
-            // comboBox2
+            // BoxGenero
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(60, 122);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(358, 21);
-            this.comboBox2.TabIndex = 8;
+            this.BoxGenero.FormattingEnabled = true;
+            this.BoxGenero.Location = new System.Drawing.Point(60, 122);
+            this.BoxGenero.Name = "BoxGenero";
+            this.BoxGenero.Size = new System.Drawing.Size(358, 21);
+            this.BoxGenero.TabIndex = 8;
             // 
-            // textBox1
+            // TxtFilme1
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 20);
-            this.textBox1.TabIndex = 9;
+            this.TxtFilme1.Location = new System.Drawing.Point(62, 174);
+            this.TxtFilme1.Name = "TxtFilme1";
+            this.TxtFilme1.Size = new System.Drawing.Size(356, 20);
+            this.TxtFilme1.TabIndex = 9;
             // 
-            // textBox3
+            // TxtSinopse
             // 
-            this.textBox3.Location = new System.Drawing.Point(60, 282);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 90);
-            this.textBox3.TabIndex = 11;
+            this.TxtSinopse.Location = new System.Drawing.Point(60, 282);
+            this.TxtSinopse.Multiline = true;
+            this.TxtSinopse.Name = "TxtSinopse";
+            this.TxtSinopse.Size = new System.Drawing.Size(358, 90);
+            this.TxtSinopse.TabIndex = 11;
             // 
-            // checkBox1
+            // BoxLocado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(60, 388);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(62, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Locado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.BoxLocado.AutoSize = true;
+            this.BoxLocado.Location = new System.Drawing.Point(60, 388);
+            this.BoxLocado.Name = "BoxLocado";
+            this.BoxLocado.Size = new System.Drawing.Size(62, 17);
+            this.BoxLocado.TabIndex = 12;
+            this.BoxLocado.Text = "Locado";
+            this.BoxLocado.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox1
+            // TxtDuracao
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(62, 217);
-            this.maskedTextBox1.Mask = "90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(356, 20);
-            this.maskedTextBox1.TabIndex = 13;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.TxtDuracao.Location = new System.Drawing.Point(62, 217);
+            this.TxtDuracao.Mask = "90:00";
+            this.TxtDuracao.Name = "TxtDuracao";
+            this.TxtDuracao.Size = new System.Drawing.Size(356, 20);
+            this.TxtDuracao.TabIndex = 13;
+            this.TxtDuracao.ValidatingType = typeof(System.DateTime);
             // 
-            // pictureBox1
+            // BoxBanner
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(442, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 301);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.BoxBanner.Location = new System.Drawing.Point(442, 71);
+            this.BoxBanner.Name = "BoxBanner";
+            this.BoxBanner.Size = new System.Drawing.Size(273, 301);
+            this.BoxBanner.TabIndex = 14;
+            this.BoxBanner.TabStop = false;
             // 
-            // button1
+            // BtnCadastrarFilme
             // 
-            this.button1.Location = new System.Drawing.Point(62, 412);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(653, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.BtnCadastrarFilme.Location = new System.Drawing.Point(62, 412);
+            this.BtnCadastrarFilme.Name = "BtnCadastrarFilme";
+            this.BtnCadastrarFilme.Size = new System.Drawing.Size(653, 23);
+            this.BtnCadastrarFilme.TabIndex = 15;
+            this.BtnCadastrarFilme.Text = "Cadastrar";
+            this.BtnCadastrarFilme.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -184,14 +184,14 @@
             this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.BtnCadastrarFilme);
+            this.Controls.Add(this.BoxBanner);
+            this.Controls.Add(this.TxtDuracao);
+            this.Controls.Add(this.BoxLocado);
+            this.Controls.Add(this.TxtSinopse);
+            this.Controls.Add(this.TxtFilme1);
+            this.Controls.Add(this.BoxGenero);
+            this.Controls.Add(this.BoxCategoria);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -202,7 +202,7 @@
             this.Name = "FrmTelaFilme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTelaFilme";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BoxBanner)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,14 +216,14 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox BoxCategoria;
+        private System.Windows.Forms.ComboBox BoxGenero;
+        private System.Windows.Forms.TextBox TxtFilme1;
+        private System.Windows.Forms.TextBox TxtSinopse;
+        private System.Windows.Forms.CheckBox BoxLocado;
+        private System.Windows.Forms.MaskedTextBox TxtDuracao;
+        private System.Windows.Forms.PictureBox BoxBanner;
+        private System.Windows.Forms.Button BtnCadastrarFilme;
         private System.Windows.Forms.Label label6;
     }
 }
