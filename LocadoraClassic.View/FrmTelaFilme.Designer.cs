@@ -34,16 +34,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.boxCategoria = new System.Windows.Forms.ComboBox();
+            this.boxGenero = new System.Windows.Forms.ComboBox();
+            this.textNomeFilme = new System.Windows.Forms.TextBox();
+            this.textSinopse = new System.Windows.Forms.TextBox();
+            this.boxLocado = new System.Windows.Forms.CheckBox();
+            this.textDuracao = new System.Windows.Forms.MaskedTextBox();
+            this.boxBanner = new System.Windows.Forms.PictureBox();
+            this.btnCadastrasFilme = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.textFilme = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.boxBanner)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFilme)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -100,72 +102,73 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Banner";
             // 
-            // comboBox1
+            // boxCategoria
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(62, 71);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(356, 21);
-            this.comboBox1.TabIndex = 7;
+            this.boxCategoria.FormattingEnabled = true;
+            this.boxCategoria.Location = new System.Drawing.Point(62, 71);
+            this.boxCategoria.Name = "boxCategoria";
+            this.boxCategoria.Size = new System.Drawing.Size(356, 21);
+            this.boxCategoria.TabIndex = 7;
             // 
-            // comboBox2
+            // boxGenero
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(60, 122);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(358, 21);
-            this.comboBox2.TabIndex = 8;
+            this.boxGenero.FormattingEnabled = true;
+            this.boxGenero.Location = new System.Drawing.Point(60, 122);
+            this.boxGenero.Name = "boxGenero";
+            this.boxGenero.Size = new System.Drawing.Size(358, 21);
+            this.boxGenero.TabIndex = 8;
             // 
-            // textBox1
+            // textNomeFilme
             // 
-            this.textBox1.Location = new System.Drawing.Point(62, 174);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(356, 20);
-            this.textBox1.TabIndex = 9;
+            this.textNomeFilme.Location = new System.Drawing.Point(62, 174);
+            this.textNomeFilme.Name = "textNomeFilme";
+            this.textNomeFilme.Size = new System.Drawing.Size(356, 20);
+            this.textNomeFilme.TabIndex = 9;
             // 
-            // textBox3
+            // textSinopse
             // 
-            this.textBox3.Location = new System.Drawing.Point(60, 282);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(358, 90);
-            this.textBox3.TabIndex = 11;
+            this.textSinopse.Location = new System.Drawing.Point(60, 282);
+            this.textSinopse.Multiline = true;
+            this.textSinopse.Name = "textSinopse";
+            this.textSinopse.Size = new System.Drawing.Size(358, 90);
+            this.textSinopse.TabIndex = 11;
             // 
-            // checkBox1
+            // boxLocado
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(60, 388);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(62, 17);
-            this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Locado";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.boxLocado.AutoSize = true;
+            this.boxLocado.Location = new System.Drawing.Point(60, 388);
+            this.boxLocado.Name = "boxLocado";
+            this.boxLocado.Size = new System.Drawing.Size(62, 17);
+            this.boxLocado.TabIndex = 12;
+            this.boxLocado.Text = "Locado";
+            this.boxLocado.UseVisualStyleBackColor = true;
             // 
-            // maskedTextBox1
+            // textDuracao
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(62, 217);
-            this.maskedTextBox1.Mask = "90:00";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(356, 20);
-            this.maskedTextBox1.TabIndex = 13;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.textDuracao.Location = new System.Drawing.Point(62, 217);
+            this.textDuracao.Mask = "90:00";
+            this.textDuracao.Name = "textDuracao";
+            this.textDuracao.Size = new System.Drawing.Size(356, 20);
+            this.textDuracao.TabIndex = 13;
+            this.textDuracao.ValidatingType = typeof(System.DateTime);
             // 
-            // pictureBox1
+            // boxBanner
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(442, 71);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(273, 301);
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
+            this.boxBanner.Location = new System.Drawing.Point(442, 71);
+            this.boxBanner.Name = "boxBanner";
+            this.boxBanner.Size = new System.Drawing.Size(273, 301);
+            this.boxBanner.TabIndex = 14;
+            this.boxBanner.TabStop = false;
             // 
-            // button1
+            // btnCadastrasFilme
             // 
-            this.button1.Location = new System.Drawing.Point(62, 412);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(653, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Cadastrar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCadastrasFilme.Location = new System.Drawing.Point(65, 674);
+            this.btnCadastrasFilme.Name = "btnCadastrasFilme";
+            this.btnCadastrasFilme.Size = new System.Drawing.Size(653, 23);
+            this.btnCadastrasFilme.TabIndex = 15;
+            this.btnCadastrasFilme.Text = "Cadastrar";
+            this.btnCadastrasFilme.UseVisualStyleBackColor = true;
+            this.btnCadastrasFilme.Click += new System.EventHandler(this.btnCadastrasFilme_Click);
             // 
             // label6
             // 
@@ -177,21 +180,31 @@
             this.label6.TabIndex = 16;
             this.label6.Text = "Cadastrar Filme";
             // 
+            // textFilme
+            // 
+            this.textFilme.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.textFilme.Location = new System.Drawing.Point(37, 411);
+            this.textFilme.Name = "textFilme";
+            this.textFilme.Size = new System.Drawing.Size(736, 252);
+            this.textFilme.TabIndex = 17;
+            this.textFilme.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.textFilme_CellContentClick);
+            // 
             // FrmTelaFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 709);
+            this.Controls.Add(this.textFilme);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.btnCadastrasFilme);
+            this.Controls.Add(this.boxBanner);
+            this.Controls.Add(this.textDuracao);
+            this.Controls.Add(this.boxLocado);
+            this.Controls.Add(this.textSinopse);
+            this.Controls.Add(this.textNomeFilme);
+            this.Controls.Add(this.boxGenero);
+            this.Controls.Add(this.boxCategoria);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -202,7 +215,9 @@
             this.Name = "FrmTelaFilme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmTelaFilme";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmTelaFilme_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.boxBanner)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.textFilme)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,14 +231,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox boxCategoria;
+        private System.Windows.Forms.ComboBox boxGenero;
+        private System.Windows.Forms.TextBox textNomeFilme;
+        private System.Windows.Forms.TextBox textSinopse;
+        private System.Windows.Forms.CheckBox boxLocado;
+        private System.Windows.Forms.MaskedTextBox textDuracao;
+        private System.Windows.Forms.PictureBox boxBanner;
+        private System.Windows.Forms.Button btnCadastrasFilme;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DataGridView textFilme;
     }
 }

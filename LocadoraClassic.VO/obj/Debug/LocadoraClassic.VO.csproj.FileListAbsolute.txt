@@ -4,3 +4,15 @@ C:\Users\PROFESSOR\source\repos\LocadoraClassic\LocadoraClassic.VO\obj\Debug\Loc
 C:\Users\PROFESSOR\source\repos\LocadoraClassic\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.csproj.CoreCompileInputs.cache
 C:\Users\PROFESSOR\source\repos\LocadoraClassic\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.dll
 C:\Users\PROFESSOR\source\repos\LocadoraClassic\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.pdb
+C:\Users\ALUNO\Desktop\locadora class 1\LocadoraClassic.VO\bin\Debug\LocadoraClassic.VO.dll
+C:\Users\ALUNO\Desktop\locadora class 1\LocadoraClassic.VO\bin\Debug\LocadoraClassic.VO.pdb
+C:\Users\ALUNO\Desktop\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.csproj.AssemblyReference.cache
+C:\Users\ALUNO\Desktop\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.csproj.CoreCompileInputs.cache
+C:\Users\ALUNO\Desktop\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.dll
+C:\Users\ALUNO\Desktop\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.pdb
+C:\Users\ALUNO\Desktop\locadora class 1\locadora class 1\LocadoraClassic.VO\bin\Debug\LocadoraClassic.VO.dll
+C:\Users\ALUNO\Desktop\locadora class 1\locadora class 1\LocadoraClassic.VO\bin\Debug\LocadoraClassic.VO.pdb
+C:\Users\ALUNO\Desktop\locadora class 1\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.csproj.AssemblyReference.cache
+C:\Users\ALUNO\Desktop\locadora class 1\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.csproj.CoreCompileInputs.cache
+C:\Users\ALUNO\Desktop\locadora class 1\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.dll
+C:\Users\ALUNO\Desktop\locadora class 1\locadora class 1\LocadoraClassic.VO\obj\Debug\LocadoraClassic.VO.pdb
