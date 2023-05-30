@@ -90,6 +90,7 @@
     <Compile Include="CategoriaDAL.cs" />
     <Compile Include="ClienteDAL.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="FilmeDAL.cs" />
     <Compile Include="GeneroDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

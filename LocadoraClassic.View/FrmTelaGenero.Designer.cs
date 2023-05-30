@@ -89,7 +89,7 @@
             // btnExcluir
             // 
             this.btnExcluir.BackColor = System.Drawing.Color.White;
-            this.btnExcluir.Location = new System.Drawing.Point(344, 120);
+            this.btnExcluir.Location = new System.Drawing.Point(471, 121);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(110, 23);
             this.btnExcluir.TabIndex = 8;
@@ -100,11 +100,11 @@
             // txtAlterar
             // 
             this.txtAlterar.BackColor = System.Drawing.Color.White;
-            this.txtAlterar.Location = new System.Drawing.Point(469, 120);
+            this.txtAlterar.Location = new System.Drawing.Point(329, 121);
             this.txtAlterar.Name = "txtAlterar";
             this.txtAlterar.Size = new System.Drawing.Size(136, 23);
             this.txtAlterar.TabIndex = 9;
-            this.txtAlterar.Text = "Alterar";
+            this.txtAlterar.Text = "Atualizar";
             this.txtAlterar.UseVisualStyleBackColor = false;
             this.txtAlterar.Click += new System.EventHandler(this.txtAlterar_Click);
             // 

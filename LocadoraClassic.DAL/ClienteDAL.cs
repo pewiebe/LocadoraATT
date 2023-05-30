@@ -67,5 +67,22 @@ namespace LocadoraClassic.DAL
             // Fechar a conexão
             Conexao.Instance.Close();
         }
+        public void AtualizarGenero(Genero genero)
+        {
+            // Abrir a Conexão
+            Conexao.Instance.Open();
+
+            // MySqlCommand
+            MySqlCommand comando = Conexao.Instance.CreateCommand();
+            comando.CommandType = System.Data.CommandType.Text;
+            comando.CommandText = "UPDATE genero SET nome = @nome WHERE id = @id";
+            comando.Parameters.AddWithValue("@nome", genero.Nome);
+            comando.Parameters.AddWithValue("@id", genero.Id);
+            comando.ExecuteNonQuery();
+
+            // Fechar a conexão
+            Conexao.Instance.Close();
+
+        }
     }
 }
