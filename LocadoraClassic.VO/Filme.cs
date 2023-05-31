@@ -24,7 +24,7 @@ namespace LocadoraClassic.VO
         {
 
         }
-        public Filme(int id, string nome, TimeSpan duracao, string sinopse, bool stLocado, string banner, int idCategoria, int idGenero)
+        public Filme(int id, string nome, TimeSpan duracao, string sinopse, bool stLocado, string banner, int idCategoria, int idGenero, Categoria categoria,Genero genero, bool locado)
         {
 
             Nome = nome;
@@ -35,6 +35,9 @@ namespace LocadoraClassic.VO
             IdCategoria = idCategoria;
             IdGenero = idGenero;
             Id = id;
+            Categoria = categoria;
+            Genero = genero;
+            Locado = locado;
         }
 
        
