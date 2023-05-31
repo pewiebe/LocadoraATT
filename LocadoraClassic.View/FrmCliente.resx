@@ -303,7 +303,7 @@
     <value>11, 253</value>
   </data>
   <data name="TxtCpfCliente.Mask" xml:space="preserve">
-    <value>000.000.000-00</value>
+    <value>000.000.000.00</value>
   </data>
   <data name="TxtCpfCliente.Size" type="System.Drawing.Size, System.Drawing">
     <value>132, 20</value>
@@ -474,7 +474,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
