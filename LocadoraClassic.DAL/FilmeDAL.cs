@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 using System;
+using System.Data;
 
 namespace LocadoraClassic.DAL
 {
@@ -9,44 +10,40 @@ namespace LocadoraClassic.DAL
     {
         public List<Filme> ObterFilmes()
         {
-            if (Conexao.Instance == null)
+            using (MySqlConnection conexao = new MySqlConnection(Conexao.Instance.ConnectionString))
             {
-                Conexao.Instance.Open();
+                conexao.Open();
+                MySqlCommand comando = conexao.CreateCommand();
+                comando.CommandType = System.Data.CommandType.Text;
+                comando.CommandText = "SELECT * FROM filme";
+                MySqlDataReader reader = comando.ExecuteReader();
+
+                List<Filme> filmes = new List<Filme>();
+
+                while (reader.Read())
+                {
+                    Filme filme = new Filme();
+                    filme.Id = Convert.ToInt32(reader["id"]);
+                    filme.Nome = reader["nome"].ToString();
+                    filme.Duracao = TimeSpan.Parse(reader["duracao"].ToString());
+                    filme.Sinopse = reader["sinopse"].ToString();
+                    filme.StLocado = Convert.ToBoolean(reader["stlocado"]);
+                    filme.Banner = reader["banner"].ToString();
+                    filmes.Add(filme);
+                }
+
+                return filmes;
+
             }
-
-            MySqlCommand comando = Conexao.Instance.CreateCommand();
-            comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "SELECT * FROM filme";
-            MySqlDataReader reader = comando.ExecuteReader();
-                
-                    List<Filme> filmes = new List<Filme>();
-
-                    while (reader.Read())
-                    {
-                        Filme filme = new Filme();
-                        filme.Id = Convert.ToInt32(reader["id"]);
-                        filme.Nome = reader["nome"].ToString();
-                        filme.Duracao = TimeSpan.Parse(reader["duracao"].ToString());
-                        filme.Sinopse = reader["sinopse"].ToString();
-                        filme.StLocado = Convert.ToBoolean(reader["stlocado"]);
-                        filme.Banner = reader["banner"].ToString();
-                        filmes.Add(filme);
-                    }
-
-                    return filmes;
-                
-            
         }
 
         public void InserirFilme(Filme filme)
         {
-            if(Conexao.Instance == null)
+            using (MySqlConnection conexao = new MySqlConnection(Conexao.Instance.ConnectionString))
             {
-                Conexao.Instance.Open();
-            }  
-               
+                conexao.Open();
 
-            MySqlCommand comando = Conexao.Instance.CreateCommand();
+                MySqlCommand comando = conexao.CreateCommand();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "INSERT INTO filme(nome, duracao, sinopse, stlocado, banner, idcategoria, idgenero) " +
                                       "VALUES (@nome, @duracao, @sinopse, @stlocado, @banner, @idcategoria, @idgenero)";
@@ -58,7 +55,7 @@ namespace LocadoraClassic.DAL
                 comando.Parameters.AddWithValue("@banner", filme.Banner ?? (object)DBNull.Value);
                 comando.Parameters.AddWithValue("@idcategoria", filme.IdCategoria);
                 comando.Parameters.AddWithValue("@idgenero", filme.IdGenero);
-                // Verificar a existência da categoria e do gênero antes de inserir o filme
+
                 int idCategoria = VerificarExistenciaCategoria(filme.IdCategoria);
                 int idGenero = VerificarExistenciaGenero(filme.IdGenero);
 
@@ -70,16 +67,18 @@ namespace LocadoraClassic.DAL
                 {
                     Console.WriteLine("Categoria ou gênero inválido.");
                 }
-            
+            }
         }
 
         private int VerificarExistenciaCategoria(int idCategoria)
         {
 
 
-                Conexao.Instance.Open();       
+            using (MySqlConnection conexao = new MySqlConnection(Conexao.Instance.ConnectionString))
+            {
+                conexao.Open();
 
-                MySqlCommand comando = Conexao.Instance.CreateCommand();
+                MySqlCommand comando = conexao.CreateCommand();
                 comando.CommandType = System.Data.CommandType.Text;
                 comando.CommandText = "SELECT COUNT(*) FROM categoria WHERE id = @idCategoria";
                 comando.Parameters.AddWithValue("@idCategoria", idCategoria);
@@ -94,68 +93,33 @@ namespace LocadoraClassic.DAL
                 {
                     return -1;
                 }
-            
+            }
         }
 
         private int VerificarExistenciaGenero(int idGenero)
         {
-           
-                if (Conexao.Instance == null)
-                {
-                    Conexao.Instance.Open();
-                }
 
-                MySqlCommand comando = Conexao.Instance.CreateCommand();
-                comando.CommandType = System.Data.CommandType.Text;
-                comando.CommandText = "SELECT COUNT(*) FROM genero WHERE id = @idGenero";
-                comando.Parameters.AddWithValue("@idGenero", idGenero);
-
-                int count = Convert.ToInt32(comando.ExecuteScalar());
-
-                if (count > 0)
-                {
-                    return idGenero;
-                }
-                else
-                {
-                    return -1;
-                }
+            if (Conexao.Instance.State != ConnectionState.Open)
+            {
+                Conexao.Instance.Open();
             }
 
-        public List<Filme> ObterFilmeTeste()
-        {
-            // Abrir a Conexão
-            Conexao.Instance.Open();
 
-            // MySqlCommand
             MySqlCommand comando = Conexao.Instance.CreateCommand();
             comando.CommandType = System.Data.CommandType.Text;
-            comando.CommandText = "SELECT * FROM cliente";
+            comando.CommandText = "SELECT COUNT(*) FROM genero WHERE id = @idGenero";
+            comando.Parameters.AddWithValue("@idGenero", idGenero);
 
-            // Executar o comando e obter o resultado
-            MySqlDataReader reader = comando.ExecuteReader();
-            List<Filme> clientes = new List<Filme>();
+            int count = Convert.ToInt32(comando.ExecuteScalar());
 
-            while (reader.Read())
+            if (count > 0)
             {
-                Filme filme = new Filme();
-                filme.Id = Convert.ToInt32(reader["id"]);
-                filme.Nome = reader["nome"].ToString();
-                filme.Duracao = TimeSpan.Parse(reader["duracao"].ToString());
-                filme.Sinopse = reader["sinopse"].ToString();
-                filme.StLocado = Convert.ToBoolean(reader["stlocado"]);
-                filme.Banner = reader["banner"].ToString();
-                filme.Add(filme);
+                return idGenero;
             }
-
-            // Fechar o reader
-            reader.Close();
-
-            // Fechar a conexão
-            Conexao.Instance.Close();
-
-            return filme;
+            else
+            {
+                return -1;
+            }
         }
-
     }
 }

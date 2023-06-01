@@ -18,15 +18,15 @@ namespace LocadoraClassic.VO
         public int IdGenero { get; set; }
         public Categoria Categoria { get; set; }
         public Genero Genero { get; set; }
-        public bool Locado { get; set; }
+        public Cliente Cliente { get; set; }
 
         public Filme()
         {
 
         }
-        public Filme(int id, string nome, TimeSpan duracao, string sinopse, bool stLocado, string banner, int idCategoria, int idGenero, Categoria categoria,Genero genero, bool locado)
+        public Filme(int id, string nome, TimeSpan duracao, string sinopse, bool stLocado, string banner, int idCategoria, int idGenero, Categoria categoria, Genero genero, Cliente cliente)
         {
-
+            Id = id;
             Nome = nome;
             Duracao = duracao;
             Sinopse = sinopse;
@@ -34,11 +34,12 @@ namespace LocadoraClassic.VO
             Banner = banner;
             IdCategoria = idCategoria;
             IdGenero = idGenero;
-            Id = id;
             Categoria = categoria;
             Genero = genero;
-            Locado = locado;
+            Cliente = cliente;
         }
+
+
         public override string ToString()
         {
             return Nome;

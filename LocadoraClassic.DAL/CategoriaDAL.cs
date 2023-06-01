@@ -22,6 +22,7 @@ namespace LocadoraClassic.DAL
             comando.Parameters.Add(new MySqlParameter("@nome", categoria.Nome));
             comando.Parameters.Add(new MySqlParameter("@valordadiaria", categoria.ValordaDiaria.ToString()));
 
+
             comando.ExecuteNonQuery();
             Conexao.Instance.Close();
         }

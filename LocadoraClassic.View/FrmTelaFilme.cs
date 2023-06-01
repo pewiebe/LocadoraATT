@@ -47,7 +47,7 @@ namespace LocadoraClassic.View
         }
 
             private void btnCadastrasFilme_Click(object sender, EventArgs e)
-        {
+            {
             // Crie um novo objeto Filme
             Filme filme = new Filme();
             filme.Nome = textNomeFilme.Text;
@@ -61,18 +61,19 @@ namespace LocadoraClassic.View
                 idCategoria = Convert.ToInt32(boxCategoria.SelectedValue);
                 // Faça algo com o valor selecionado
             }
-           
-           /* if (boxCategoria.SelectedItem is Categoria categoria)
-            {
-                filme.Categoria = categoria;
-            }*/
 
-            /*if (boxGenero.SelectedItem is Genero genero)
+            if (boxCategoria.SelectedValue != null)
             {
-                filme.Genero = genero;
-            }*/
+                idCategoria = Convert.ToInt32(boxCategoria.SelectedValue);
+                filme.IdCategoria = idCategoria;
+            }
 
-            filme.Locado = boxLocado.Checked;
+            if (boxGenero.SelectedValue != null)
+            {
+                int idGenero = Convert.ToInt32(boxGenero.SelectedValue);
+                filme.IdGenero = idGenero;
+            }
+
 
             filme.IdCategoria = 10;
             filme.IdGenero = 13;
@@ -116,26 +117,40 @@ namespace LocadoraClassic.View
 
         private void FrmTelaFilme_Load(object sender, EventArgs e)
         {
-            CarregarGrid();
+            AtualizarGrid();
         }
         public void CarregarGrid()
         {
-            List<Filme> filmes = filmeDAL.ObterFilmes().ToList();
+            List<Filme> filmes = filmeDAL.ObterFilmes();
 
-            // Remova a referência às propriedades Categoria, Genero e Locado
-            var filmesSemInformacoesAdicionais = filmes.Select(filme => new Filme
-            {
-                Id = filme.Id,
-                Nome = filme.Nome,
-                Duracao = filme.Duracao,
-                Sinopse = filme.Sinopse,
-                StLocado = filme.StLocado,
-                Banner = filme.Banner,
-                IdCategoria = filme.IdCategoria,
-                IdGenero = filme.IdGenero
-            }).ToList();
+            textFilme.AutoGenerateColumns = false;
+            textFilme.Columns.Clear();
 
-            textFilme.DataSource = filmesSemInformacoesAdicionais;
+            textFilme.Columns.Add("Id", "ID");
+            textFilme.Columns["Id"].DataPropertyName = "Id";
+
+            textFilme.Columns.Add("Nome", "Nome");
+            textFilme.Columns["Nome"].DataPropertyName = "Nome";
+
+            textFilme.Columns.Add("Duracao", "Duração");
+            textFilme.Columns["Duracao"].DataPropertyName = "Duracao";
+
+            textFilme.Columns.Add("Sinopse", "Sinopse");
+            textFilme.Columns["Sinopse"].DataPropertyName = "Sinopse";
+
+            textFilme.Columns.Add("StLocado", "Locado");
+            textFilme.Columns["StLocado"].DataPropertyName = "StLocado";
+
+            textFilme.Columns.Add("Banner", "Banner");
+            textFilme.Columns["Banner"].DataPropertyName = "Banner";
+
+            textFilme.Columns.Add("IdCategoria", "ID Categoria");
+            textFilme.Columns["IdCategoria"].DataPropertyName = "IdCategoria";
+
+            textFilme.Columns.Add("IdGenero", "ID Gênero");
+            textFilme.Columns["IdGenero"].DataPropertyName = "IdGenero";
+
+            textFilme.DataSource = filmes;
         }
     }
 }
